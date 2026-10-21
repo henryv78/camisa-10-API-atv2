@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte seu onze · Camisa 10</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/icone.svg">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+<header class="cabecalho">
+  <a class="marca" href="index.html"><span class="marca-numero">10</span><span>CAMISA 10<small>FUTEBOL É ESCOLHA.</small></span></a>
+  <nav aria-label="Menu principal">
+    <a class="atual" aria-current="page" href="index.html">Montar draft</a>
+    <a href="php/listar.php">Meus times</a>
+    <a href="pages/vestiario.html">Vestiário</a>
+    <a href="pages/sobre.html">Sobre</a>
+  </nav>
+</header>
+<main>
+<section class="abertura">
+  <div><p class="etiqueta">A PRÓXIMA ESCALAÇÃO É SUA</p><h1>Onze nomes.<br><em>O seu futebol.</em></h1></div>
+  <p class="descricao">Escolha os jogadores nos espaços do campo e monte seu time na formação 4–3–3.</p>
+</section>
+<section class="busca-api cartao" aria-labelledby="titulo-busca">
+  <p class="etiqueta">DADOS DO FUTEBOL</p>
+  <h2 id="titulo-busca">Buscar jogador</h2>
+  <p>Pesquise um jogador e consulte as informações disponíveis na API.</p>
+  <form id="form-busca-jogador">
+    <label for="nome-jogador-api">Nome do jogador</label>
+    <div class="linha-busca"><input type="text" id="nome-jogador-api" placeholder="Ex.: Messi" required><button type="submit" class="botao principal">Buscar</button></div>
+  </form>
+  <p id="mensagem-api" class="aviso" role="status" aria-live="polite"></p>
+  <div id="resultado-api" class="resultado-api"></div>
+</section>
+<form action="php/salvar.php" method="post" class="montagem">
+  <section class="prancheta" aria-label="Campo e jogadores">
+    <div class="topo-campo"><div><p class="etiqueta">PRANCHETA TÁTICA</p><h2 id="nome-no-campo">Meu onze ideal</h2></div><span class="esquema">4–3–3</span></div>
+    <div class="campo">
+      <div class="linha linha-0">
+        <div class="posicao">
+          <span class="numero">1</span>
+          <label for="ponta_esquerda">PE</label>
+          <select class="jogador" id="ponta_esquerda" name="ponta_esquerda" aria-label="Ponta esquerda" required>
+            <option value="">Escolher</option>
+            <option value="Vini Jr.">Vini Jr.</option>
+            <option value="Neymar">Neymar</option>
+            <option value="Rafael Leão">Rafael Leão</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">2</span>
+          <label for="centroavante">CA</label>
+          <select class="jogador" id="centroavante" name="centroavante" aria-label="Centroavante" required>
+            <option value="">Escolher</option>
+            <option value="Haaland">Haaland</option>
+            <option value="Harry Kane">Harry Kane</option>
+            <option value="Lautaro Martínez">Lautaro Martínez</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">3</span>
+          <label for="ponta_direita">PD</label>
+          <select class="jogador" id="ponta_direita" name="ponta_direita" aria-label="Ponta direita" required>
+            <option value="">Escolher</option>
+            <option value="Salah">Salah</option>
+            <option value="Saka">Saka</option>
+            <option value="Raphinha">Raphinha</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+      </div>
+      <div class="linha linha-1">
+        <div class="posicao">
+          <span class="numero">4</span>
+          <label for="meia_esquerda">MEI</label>
+          <select class="jogador" id="meia_esquerda" name="meia_esquerda" aria-label="Meia pela esquerda" required>
+            <option value="">Escolher</option>
+            <option value="Bellingham">Bellingham</option>
+            <option value="Pedri">Pedri</option>
+            <option value="Musiala">Musiala</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">5</span>
+          <label for="volante">VOL</label>
+          <select class="jogador" id="volante" name="volante" aria-label="Volante" required>
+            <option value="">Escolher</option>
+            <option value="Rodri">Rodri</option>
+            <option value="Casemiro">Casemiro</option>
+            <option value="Declan Rice">Declan Rice</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">6</span>
+          <label for="meia_direita">MEI</label>
+          <select class="jogador" id="meia_direita" name="meia_direita" aria-label="Meia pela direita" required>
+            <option value="">Escolher</option>
+            <option value="De Bruyne">De Bruyne</option>
+            <option value="Bruno Fernandes">Bruno Fernandes</option>
+            <option value="Valverde">Valverde</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+      </div>
+      <div class="linha linha-2">
+        <div class="posicao">
+          <span class="numero">7</span>
+          <label for="lateral_esquerdo">LE</label>
+          <select class="jogador" id="lateral_esquerdo" name="lateral_esquerdo" aria-label="Lateral esquerdo" required>
+            <option value="">Escolher</option>
+            <option value="Theo Hernández">Theo Hernández</option>
+            <option value="Alphonso Davies">Alphonso Davies</option>
+            <option value="Robertson">Robertson</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">8</span>
+          <label for="zagueiro_esquerdo">ZAG</label>
+          <select class="jogador" id="zagueiro_esquerdo" name="zagueiro_esquerdo" aria-label="Zagueiro pela esquerda" required>
+            <option value="">Escolher</option>
+            <option value="Van Dijk">Van Dijk</option>
+            <option value="Gabriel Magalhães">Gabriel Magalhães</option>
+            <option value="Bastoni">Bastoni</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">9</span>
+          <label for="zagueiro_direito">ZAG</label>
+          <select class="jogador" id="zagueiro_direito" name="zagueiro_direito" aria-label="Zagueiro pela direita" required>
+            <option value="">Escolher</option>
+            <option value="Marquinhos">Marquinhos</option>
+            <option value="Rúben Dias">Rúben Dias</option>
+            <option value="Saliba">Saliba</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+        <div class="posicao">
+          <span class="numero">10</span>
+          <label for="lateral_direito">LD</label>
+          <select class="jogador" id="lateral_direito" name="lateral_direito" aria-label="Lateral direito" required>
+            <option value="">Escolher</option>
+            <option value="Hakimi">Hakimi</option>
+            <option value="Carvajal">Carvajal</option>
+            <option value="Alexander-Arnold">Alexander-Arnold</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+      </div>
+      <div class="linha linha-3">
+        <div class="posicao">
+          <span class="numero">11</span>
+          <label for="goleiro">GOL</label>
+          <select class="jogador" id="goleiro" name="goleiro" aria-label="Goleiro" required>
+            <option value="">Escolher</option>
+            <option value="Alisson">Alisson</option>
+            <option value="Ederson">Ederson</option>
+            <option value="Courtois">Courtois</option>
+          </select>
+          <span class="nome-jogador">Camisa disponível</span>
+        </div>
+      </div>
+    </div>
+    <p class="base-campo">Três opções por posição. Onze decisões suas.</p>
+  </section>
+  <aside class="painel">
+    <section class="cartao">
+      <p class="etiqueta">SUA IDENTIDADE</p>
+      <label for="nome">Nome do time</label>
+      <input type="text" id="nome" name="nome" maxlength="60" placeholder="Ex.: Timão dos Sonhos" value="" required>
+      <div class="placar"><span id="quantidade">0</span><span>/ 11<small>JOGADORES ESCOLHIDOS</small></span></div>
+      <p class="aviso" id="situacao">Escolha um jogador em cada posição.</p>
+      <button type="submit" class="botao principal">Salvar meu time ↗</button>
+      <a class="link-painel" href="php/listar.php">Ver meus times</a>
+    </section>
+    <section class="dica"><p class="etiqueta">DICA DO VESTIÁRIO</p><h2>Camisa pesada.<br>Escolha consciente.</h2><p>Monte um time com a sua cara. Você pode mudar as escolhas antes de salvar.</p></section>
+  </aside>
+</form>
+<section class="passos"><p><b>01</b> Escolha os jogadores</p><p><b>02</b> Dê um nome ao time</p><p><b>03</b> Salve sua escalação</p></section></main>
+<footer><strong>CAMISA 10 / DRAFT CLUB</strong><span>Seu time. Suas escolhas.</span></footer>
+</body>
+</html>
